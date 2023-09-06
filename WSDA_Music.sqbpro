@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="/Users/miapekez/Downloads/Ex_Files_SQL_EssT/Exercise Files/WSDA_Music.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="3370"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,5:mainTrack"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="Album" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="53"/><column index="2" value="196"/><column index="3" value="53"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Artist" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="53"/><column index="2" value="132"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Customer" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="69"/><column index="2" value="61"/><column index="3" value="92"/><column index="4" value="300"/><column index="5" value="300"/><column index="6" value="146"/><column index="7" value="40"/><column index="8" value="94"/><column index="9" value="141"/><column index="10" value="255"/><column index="11" value="227"/><column index="12" value="149"/><column index="13" value="80"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Employee" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="68"/><column index="2" value="60"/><column index="3" value="61"/><column index="4" value="125"/><column index="5" value="60"/><column index="6" value="234"/><column index="7" value="234"/><column index="8" value="205"/><column index="9" value="59"/><column index="10" value="36"/><column index="11" value="50"/><column index="12" value="89"/><column index="13" value="209"/><column index="14" value="209"/><column index="15" value="137"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Genre" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="49"/><column index="2" value="118"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Invoice" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="55"/><column index="2" value="69"/><column index="3" value="234"/><column index="4" value="300"/><column index="5" value="146"/><column index="6" value="68"/><column index="7" value="94"/><column index="8" value="141"/><column index="9" value="98"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="InvoiceLine" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="77"/><column index="2" value="55"/><column index="3" value="67"/><column index="4" value="56"/><column index="5" value="53"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="MediaType" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="74"/><column index="2" value="180"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Playlist" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="56"/><column index="2" value="199"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="PlaylistTrack" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="56"/><column index="2" value="67"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Track" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort><column index="2" mode="1"/></sort><column_widths><column index="1" value="67"/><column index="2" value="142"/><column index="3" value="51"/><column index="4" value="74"/><column index="5" value="49"/><column index="6" value="188"/><column index="7" value="109"/><column index="8" value="151"/><column index="9" value="56"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">/*
+CHALLENGE 1
+General queries that begin to give you some high-level context
+1. How many transactions took place between the years 2011 and 2012? 167
+2. How much money did WSDA Music make during the same period? $1947.97
+*/
+
+SELECT
+	count(*),
+	sum(total)
+FROM
+	Invoice
+WHERE
+	InvoiceDate &gt;= '2011-01-01' and InvoiceDate &lt;= '2012-12-31'</sql><sql name="SQL 3">/*
+CHALLENGE 2
+More targeted questions that query tables containing data about customers and employees
+*/
+
+-- 1. Get a list of customers who made purchases between 2011 and 2012. 
+
+SELECT
+	C.FirstName,
+	C.LastName,
+	I.total
+FROM
+	Customer AS C
+inner JOIN
+	Invoice AS I
+on
+	C.CustomerId = I.CustomerId
+WHERE
+	InvoiceDate &gt;= '2011-01-01' and InvoiceDate &lt;= '2012-12-31'
+order by
+	I.total DESC
+	
+--2. Get a list of customers, sales reps, and total transaction amounts for each customer between 2011 and 2012. 
+
+SELECT
+	C.FirstName AS [Customer first name],
+	C.LastName AS [Customer last name], 
+	E.FirstName AS [Employee first name],
+	E.LastName AS [Employee last name],
+	I.total
+FROM
+	Customer AS C
+inner JOIN
+	Invoice AS I
+on
+	C.CustomerId = I.CustomerId
+inner JOIN
+	employee AS E
+on
+	E.EmployeeId = C.SupportRepId
+WHERE
+	InvoiceDate &gt;= '2011-01-01' and InvoiceDate &lt;= '2012-12-31'
+order by
+	i.total DESC
+
+--3. How many transactions are above the average transaction amount during the same time period? 
+
+SELECT
+	count(total) AS [Number of transactions above average]
+FROM
+	Invoice
+WHERE
+	InvoiceDate &gt;= '2011-01-01' and InvoiceDate &lt;= '2012-12-31'
+	AND 
+	total &gt; (SELECT
+	round(avg(total),2)
+FROM
+	Invoice
+WHERE
+	InvoiceDate &gt;= '2011-01-01' and InvoiceDate &lt;= '2012-12-31')
+
+--4. What is the average transaction amount for each year that WSDA Music has been in business? 
+
+SELECT
+	round(avg(total),2) AS [Avg Transaction Amt],
+	strftime('%Y', InvoiceDate) AS [Year]
+FROM
+	Invoice
+Group by
+	strftime('%Y', InvoiceDate)
+
+	
+
+</sql><sql name="SQL 4">/*CHALLENGE 3
+Queries that perform in-depth analysis with the aim of finding employees who may have been financially motivated to commit a crime
+*/
+--1. Get a list of employees who exceeded the average transaction amount from sales they generated during 2011 and 2012.
+
+SELECT
+	e.FirstName AS [Emp First Name],
+	e.LastName AS [Emp Last Name],
+	sum(i.total) AS [Total sales]
+FROM
+	Invoice AS i
+inner JOIN
+	Customer As c
+on
+	i.CustomerId = c.CustomerId
+inner JOIN
+	Employee AS e
+on
+	c.SupportRepId = e.EmployeeId
+WHERE
+	total &gt; 11.66
+	AND InvoiceDate &gt;= '2011-01-01' and InvoiceDate &lt;= '2012-12-31'
+group by
+	e.FirstName,
+	e.LastName
+order by
+	e.LastName
+
+--2. Create a Commission Payout column that displays each employee’s commission based on 15% of the sales transaction amount.
+	
+SELECT
+	e.FirstName AS [Emp First Name],
+	e.LastName AS [Emp Last Name],
+	sum(i.total) AS [Total sales],
+	round(sum(i.total)*0.15,2) AS [Commission Payout]
+FROM
+	Invoice AS i
+inner JOIN
+	Customer As c
+on
+	i.CustomerId = c.CustomerId
+inner JOIN
+	Employee AS e
+on
+	c.SupportRepId = e.EmployeeId
+WHERE
+	InvoiceDate &gt;= '2011-01-01' and InvoiceDate &lt;= '2012-12-31'
+group by
+	e.FirstName,
+	e.LastName
+order by
+	e.LastName
+
+--3. Which employee made the highest commission?
+-- Jane Peacock
+
+--4. List the customers that the employee identified in the last question.
+
+SELECT
+	c.FirstName AS [Customer First Name],
+	c.LastName As [Customer Last Name],
+	e.FirstName AS [Emp First Name],
+	e.LastName AS [Emp Last Name],
+	sum(i.total) AS [Total sales],
+	round(sum(i.total)*0.15,2) AS [Commission Payout]
+FROM
+	Invoice AS i
+inner JOIN
+	Customer As c
+on
+	i.CustomerId = c.CustomerId
+inner JOIN
+	Employee AS e
+on
+	c.SupportRepId = e.EmployeeId
+WHERE
+	InvoiceDate &gt;= '2011-01-01' and InvoiceDate &lt;= '2012-12-31'
+	AND
+	e.LastName = 'Peacock'
+group by
+	c.FirstName,
+	c.LastName,
+	e.FirstName,
+	e.LastName
+order by
+	[Total Sales] DESC
+
+--5. Which customer made the highest purchase?
+-- John Doeein
+
+--6. Look at this customer record—do you see anything suspicious?
+-- No address, phone, or email recorded
+SELECT
+	*
+FROM
+	Customer
+WHERE
+	LastName = 'Doeein'
+	
+--7. Who do you conclude is our primary person of interest? 
+-- Jane Peacock.
+</sql><current_tab id="0"/></tab_sql></sqlb_project>
